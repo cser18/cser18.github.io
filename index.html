@@ -189,7 +189,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+                        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,144 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-汇编语言第一章" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/18/汇编语言第一章/" class="article-date">
+      <time datetime="2018-12-18T10:21:00.000Z" itemprop="datePublished">2018-12-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/18/汇编语言第一章/">汇编语言第一章</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="第一章-汇编语言基础"><a href="#第一章-汇编语言基础" class="headerlink" title="第一章 汇编语言基础"></a>第一章 汇编语言基础</h3><h4 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h4><table>
+<thead>
+<tr>
+<th>寄存器的名称</th>
+<th>中英名含义</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EAX</td>
+<td>累加器</td>
+<td>用于算术运算、逻辑运算、与外界传送信息</td>
+</tr>
+<tr>
+<td>EBX</td>
+<td>基址寄存器</td>
+<td>常用来存放储存器地址、以方便指向变量或数组中的元素</td>
+</tr>
+<tr>
+<td>ECX</td>
+<td>计数器</td>
+<td>常用来循环操作等指令中的计数器</td>
+</tr>
+<tr>
+<td>EDX</td>
+<td>数据寄存器</td>
+<td>可以存放数据、其中低16位DX常用来存放外设端口地址</td>
+</tr>
+<tr>
+<td>ESI</td>
+<td>源变址寄存器</td>
+<td>用于指向字符串或数组的源操作数</td>
+</tr>
+<tr>
+<td>EBP</td>
+<td>基址指针寄存器</td>
+<td>默认情况下指向程序堆栈的数据</td>
+</tr>
+<tr>
+<td>ESP</td>
+<td>堆栈指针寄存器</td>
+<td>专门用于指向程序堆栈区域顶部的数据、在涉及堆栈操作的指令中会自动增加或减少</td>
+</tr>
+</tbody>
+</table>
+<h4 id="储存模型"><a href="#储存模型" class="headerlink" title="储存模型"></a>储存模型</h4><ul>
+<li>平展储存模型</li>
+<li>段式储存模型</li>
+</ul>
+<h4 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h4><font color="#0099ff"><br>重点：<br><br><em> 实地址储存模型是段式储存模型的一个特例
+
+</em> 实地址工作方式只能支持实地址储存模型<br><br></font>
+
+<h4 id="逻辑地址"><a href="#逻辑地址" class="headerlink" title="逻辑地址"></a>逻辑地址</h4><p>程序员都采用逻辑地址进行程序设计。逻辑地址由段地址和偏移地址组成。</p>
+<font color="#7FFF00"><br>段基地址（简称段地址）确定段在主存中的起始地址。以段地址为起点，段内的位置可以用距离该起点的位移量来表示，称为偏移（Offset）地址。<br><br></font>
+
+<h4 id="段选择器"><a href="#段选择器" class="headerlink" title="段选择器"></a>段选择器</h4><p>实地址储存模型的主存空间中有1MB</p>
+<h4 id="程序设计语言"><a href="#程序设计语言" class="headerlink" title="程序设计语言"></a>程序设计语言</h4><h5 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h5><p>定义：计算机能够直接识别的是二进制0和1组成的代码。机器指令（Instruction）就是用二进制编码的指令</p>
+<h5 id="汇编语言"><a href="#汇编语言" class="headerlink" title="汇编语言"></a>汇编语言</h5><p>定义：为了克服机器语言的缺点，人们采用便于记忆并能够描述指令功能的符号来表示<br>机器指令。</p>
+<font color="#7FFF00"><br><br>汇编语言源程序要翻译成机器语言程序才能由处理器执行。这个翻译的过程叫做汇编。完成汇编工作的程序就是汇编程序。<br><br></font>
+
+<h4 id="汇编语言程序格式"><a href="#汇编语言程序格式" class="headerlink" title="汇编语言程序格式"></a>汇编语言程序格式</h4><p>指令由操作码和操作数（地址码）组成</p>
+<h4 id="第一章课后习题部分（重点）"><a href="#第一章课后习题部分（重点）" class="headerlink" title="第一章课后习题部分（重点）"></a>第一章课后习题部分（重点）</h4><h5 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h5><h6 id="哪个处理器的指令系统成为Intel-80-86系列处理器的基本指令集？"><a href="#哪个处理器的指令系统成为Intel-80-86系列处理器的基本指令集？" class="headerlink" title="哪个处理器的指令系统成为Intel 80*86系列处理器的基本指令集？"></a>哪个处理器的指令系统成为Intel 80*86系列处理器的基本指令集？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：8086</span><br></pre></td></tr></table></figure>
+<h6 id="什么是通用寄存器？"><a href="#什么是通用寄存器？" class="headerlink" title="什么是通用寄存器？"></a>什么是通用寄存器？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：一般指处理器最常见使用的整数寄存器，可用于保存整数数据、地址等</span><br></pre></td></tr></table></figure>
+<h6 id="最高有效位MSB是指哪一位？"><a href="#最高有效位MSB是指哪一位？" class="headerlink" title="最高有效位MSB是指哪一位？"></a>最高有效位MSB是指哪一位？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：数据的最高位，例如对8、16、32位数据，MSB依次指D(7)、D(15)、D(31)位</span><br><span class="line">()表示下标</span><br></pre></td></tr></table></figure>
+<h6 id="汇编语言中的标识符与高级语言的变量和常量名的组成原则有本质的区别么？"><a href="#汇编语言中的标识符与高级语言的变量和常量名的组成原则有本质的区别么？" class="headerlink" title="汇编语言中的标识符与高级语言的变量和常量名的组成原则有本质的区别么？"></a>汇编语言中的标识符与高级语言的变量和常量名的组成原则有本质的区别么？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：没有</span><br></pre></td></tr></table></figure>
+<h6 id="汇编语言的标识符大小写不敏感意味着什么？"><a href="#汇编语言的标识符大小写不敏感意味着什么？" class="headerlink" title="汇编语言的标识符大小写不敏感意味着什么？"></a>汇编语言的标识符大小写不敏感意味着什么？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">表示字母大小写不同，但表示同一个符号</span><br></pre></td></tr></table></figure>
+<h5 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h5><h6 id="EAX也称为累加器，因为它是用频繁"><a href="#EAX也称为累加器，因为它是用频繁" class="headerlink" title="EAX也称为累加器，因为它是用频繁"></a>EAX也称为累加器，因为它是用频繁</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对，EAX中的A来自英文累加器（Accumulator）</span><br></pre></td></tr></table></figure>
+<h6 id="处理器的传送指令MOV属于汇编语言的执行语句"><a href="#处理器的传送指令MOV属于汇编语言的执行语句" class="headerlink" title="处理器的传送指令MOV属于汇编语言的执行语句"></a>处理器的传送指令MOV属于汇编语言的执行语句</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对</span><br></pre></td></tr></table></figure>
+<h6 id="汇编语言的语句由明显的四部分组成，不需要分隔符的区别"><a href="#汇编语言的语句由明显的四部分组成，不需要分隔符的区别" class="headerlink" title="汇编语言的语句由明显的四部分组成，不需要分隔符的区别"></a>汇编语言的语句由明显的四部分组成，不需要分隔符的区别</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错，使用分割符才有明显的四个部分</span><br></pre></td></tr></table></figure>
+<h6 id="MASM汇编语言的注释用分号开始，不能用中文分号"><a href="#MASM汇编语言的注释用分号开始，不能用中文分号" class="headerlink" title="MASM汇编语言的注释用分号开始，不能用中文分号"></a>MASM汇编语言的注释用分号开始，不能用中文分号</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对，源程序中的分隔符以及各种标识符都是英文</span><br></pre></td></tr></table></figure>
+<h6 id="程序终止执行也就是意味着汇编结束，所以两者含义相同"><a href="#程序终止执行也就是意味着汇编结束，所以两者含义相同" class="headerlink" title="程序终止执行也就是意味着汇编结束，所以两者含义相同"></a>程序终止执行也就是意味着汇编结束，所以两者含义相同</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错，两者完全是两个概念</span><br></pre></td></tr></table></figure>
+<h5 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h5><h6 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h6><p>IA-32处理器有两个8个32位通用寄存器，其中EAX、EBX、ECX和EDX，可以分成16位和8位操作；还有另外4个是：ESI、EDI、EBP、ESP。</p>
+<h6 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h6><p>寄存器EDX是32位的，其中低16位的名称是DX，还可以分成两个8位的寄存器，其中D(0) - D(7)和D(8)D(15)部分可以用名称DL和DH</p>
+<h6 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h6><p>IA-32处理器有6个段寄存器，它们都是16位的</p>
+<h6 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h6><p>逻辑地址由段基地址和偏移地址两部分组成。代码段中下一条要执行的指令由CS和EIP寄存器指示，后者在实地址模型中起作用的仅有IP寄存器部分。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-方法的重载与递归" class="article article-type-post" itemscope="" itemprop="blogPost">
   
