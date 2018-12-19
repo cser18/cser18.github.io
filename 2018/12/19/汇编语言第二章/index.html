@@ -7,16 +7,20 @@
   
   
   
-  <title>深度学习 | Byte</title>
+  <title>汇编语言第二章 | Byte</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="深度学习">
-<meta property="og:url" content="http://yoursite.com/DL/index.html">
+  <meta name="description" content="第二章数据表示和寻址常量的表达重点：EQU用于数值等价时不能重复定义符号名，但是’=’允许有重复的赋值   变量的应用小端方式：低对低，高对高 默认方式为小端方式 变量的定位ORG指令ORG伪指令将参数表达的偏移地址作为当前偏移地址，格式是：1234ORG 参数例如：从偏移地址100H处安排数据或程序，可以使用语句格式为：org 100h ALIGN伪指令1对齐 变量属性 地址属性– 指首个变量所">
+<meta name="keywords" content="汇编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言第二章">
+<meta property="og:url" content="http://yoursite.com/2018/12/19/汇编语言第二章/index.html">
 <meta property="og:site_name" content="Byte">
+<meta property="og:description" content="第二章数据表示和寻址常量的表达重点：EQU用于数值等价时不能重复定义符号名，但是’=’允许有重复的赋值   变量的应用小端方式：低对低，高对高 默认方式为小端方式 变量的定位ORG指令ORG伪指令将参数表达的偏移地址作为当前偏移地址，格式是：1234ORG 参数例如：从偏移地址100H处安排数据或程序，可以使用语句格式为：org 100h ALIGN伪指令1对齐 变量属性 地址属性– 指首个变量所">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-12T09:03:53.697Z">
+<meta property="og:updated_time" content="2018-12-19T04:16:19.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习">
+<meta name="twitter:title" content="汇编语言第二章">
+<meta name="twitter:description" content="第二章数据表示和寻址常量的表达重点：EQU用于数值等价时不能重复定义符号名，但是’=’允许有重复的赋值   变量的应用小端方式：低对低，高对高 默认方式为小端方式 变量的定位ORG指令ORG伪指令将参数表达的偏移地址作为当前偏移地址，格式是：1234ORG 参数例如：从偏移地址100H处安排数据或程序，可以使用语句格式为：org 100h ALIGN伪指令1对齐 变量属性 地址属性– 指首个变量所">
   
     <link rel="alternative" href="/atom.xml" title="Byte" type="application/atom+xml">
   
@@ -41,7 +45,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -254,11 +258,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-汇编语言第二章" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/DL/index.html" class="article-date">
-      <time datetime="2018-10-25T07:51:05.000Z" itemprop="datePublished">2018-10-25</time>
+      <a href="/2018/12/19/汇编语言第二章/" class="article-date">
+      <time datetime="2018-12-19T04:15:00.000Z" itemprop="datePublished">2018-12-19</time>
 </a>
 
     </div>
@@ -272,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深度学习
+      汇编语言第二章
     </h1>
   
 
@@ -283,6 +287,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -290,53 +298,150 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <h3 id="第二章数据表示和寻址"><a href="#第二章数据表示和寻址" class="headerlink" title="第二章数据表示和寻址"></a>第二章数据表示和寻址</h3><h4 id="常量的表达"><a href="#常量的表达" class="headerlink" title="常量的表达"></a>常量的表达</h4><font color="#7FFF00"><br>重点：EQU用于数值等价时不能重复定义符号名，但是’=’允许有重复的赋值<br></font>
 
 
-          
-        
+<h4 id="变量的应用"><a href="#变量的应用" class="headerlink" title="变量的应用"></a>变量的应用</h4><p>小端方式：低对低，高对高 默认方式为小端方式</p>
+<h4 id="变量的定位"><a href="#变量的定位" class="headerlink" title="变量的定位"></a>变量的定位</h4><h5 id="ORG指令"><a href="#ORG指令" class="headerlink" title="ORG指令"></a>ORG指令</h5><p>ORG伪指令将参数表达的偏移地址作为当前偏移地址，格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ORG 参数</span><br><span class="line">例如：从偏移地址100H处安排数据或程序，可以使用语句</span><br><span class="line">格式为：</span><br><span class="line">org 100h</span><br></pre></td></tr></table></figure></p>
+<h5 id="ALIGN伪指令"><a href="#ALIGN伪指令" class="headerlink" title="ALIGN伪指令"></a>ALIGN伪指令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对齐</span><br></pre></td></tr></table></figure>
+<h4 id="变量属性"><a href="#变量属性" class="headerlink" title="变量属性"></a>变量属性</h4><ul>
+<li>地址属性– 指首个变量所在储存单元的逻辑地址，含有段基地址和偏移地址</li>
+<li>类型属性–指变量定义的数据单位，有字节量、字量、双字量、3字量、4字量和10字量，依次用类型名BYTE、WORD、DWORD、FWORD、QWORD和TBYTE表示</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>操作符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地址</td>
+<td>[]</td>
+<td>将括起的表达式作为存储器地址指针</td>
+</tr>
+<tr>
+<td>地址</td>
+<td>$</td>
+<td>返回当前的偏移地址</td>
+</tr>
+<tr>
+<td>地址</td>
+<td>OFFSET 变量名</td>
+<td>返回变量名所在段的偏移地址</td>
+</tr>
+<tr>
+<td>地址</td>
+<td>SEG 变量名</td>
+<td>返回段基地址（实地址存储模型）</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>类型名 PTR 变量名</td>
+<td>将变量名按照指定的类型使用</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>TYPE 变量名</td>
+<td>返回一个字量数值，表明变量名的类型</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>LENGTHOF 变量名</td>
+<td>返回整个变量的数据项数（既元素数）</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>SIZEOF 变量名</td>
+<td>返回整个变量占用的字节数</td>
+</tr>
+</tbody>
+</table>
+<h6 id="地址操作符"><a href="#地址操作符" class="headerlink" title="地址操作符"></a>地址操作符</h6><p>地址操作符用于获取变量名的地址属性</p>
+<h4 id="数据寻址方式"><a href="#数据寻址方式" class="headerlink" title="数据寻址方式"></a>数据寻址方式</h4><ul>
+<li>立即数寻址方式</li>
+<li>寄存器寻址方式</li>
+<li>储存器寻址方式</li>
+</ul>
+<h4 id="第二章课后习题"><a href="#第二章课后习题" class="headerlink" title="第二章课后习题"></a>第二章课后习题</h4><h6 id="说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量"><a href="#说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量" class="headerlink" title="说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量"></a>说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mov edx, 1234h   ;立即数</span><br><span class="line">mov edx, vard    ;直接</span><br><span class="line">mov edx, ebx     ;寄存器</span><br><span class="line">mov edx, [ebx]   ;寄存器间接</span><br><span class="line">mov edx, [ebx + 1234H]  ;寄存器相对</span><br><span class="line">mov edx, vard[ebx]      ;寄存器相对</span><br><span class="line">mov edx, [ebx + edi]    ;基址变址</span><br><span class="line">mov edx, [ebx + edi + 1234h]  ;相对基址变址</span><br><span class="line">mov edx, vard[esi + edi]     ; 相对基址变址</span><br><span class="line">mov edx, [ebp * 4]       ;带比例寻址</span><br></pre></td></tr></table></figure>
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/12/19/汇编语言第二章/">汇编语言第二章</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 涵小书 的个人博客">涵小书</a></p>
+        <p><span>发布时间:</span>2018年12月19日 - 12时15分</p>
+        <p><span>最后更新:</span>2018年12月19日 - 12时16分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/19/汇编语言第二章/" title="汇编语言第二章">http://yoursite.com/2018/12/19/汇编语言第二章/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/12/19/汇编语言第二章/　　作者: 涵小书" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/18/汇编语言第一章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">汇编语言第一章</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第二章数据表示和寻址"><span class="toc-number">1.</span> <span class="toc-text">第二章数据表示和寻址</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常量的表达"><span class="toc-number">1.1.</span> <span class="toc-text">常量的表达</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量的应用"><span class="toc-number">1.2.</span> <span class="toc-text">变量的应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量的定位"><span class="toc-number">1.3.</span> <span class="toc-text">变量的定位</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ORG指令"><span class="toc-number">1.3.1.</span> <span class="toc-text">ORG指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ALIGN伪指令"><span class="toc-number">1.3.2.</span> <span class="toc-text">ALIGN伪指令</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量属性"><span class="toc-number">1.4.</span> <span class="toc-text">变量属性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#地址操作符"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">地址操作符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据寻址方式"><span class="toc-number">1.5.</span> <span class="toc-text">数据寻址方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二章课后习题"><span class="toc-number">1.6.</span> <span class="toc-text">第二章课后习题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量"><span class="toc-number">1.6.0.1.</span> <span class="toc-text">说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
 
 
 
@@ -369,6 +474,41 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/12/18/汇编语言第一章/" title="下一篇: 汇编语言第一章">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/19/汇编语言第二章/">汇编语言第二章</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/18/汇编语言第一章/">汇编语言第一章</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/17/方法的重载与递归/">方法的重载与递归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/25/位运算/">位运算</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/25/I-love-Algorithm/">I Iove Algorithm</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 

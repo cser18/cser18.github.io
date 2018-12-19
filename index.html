@@ -189,7 +189,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+                        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/汇编/" style="font-size: 20px;">汇编</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,134 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-汇编语言第二章" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/19/汇编语言第二章/" class="article-date">
+      <time datetime="2018-12-19T04:15:00.000Z" itemprop="datePublished">2018-12-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/19/汇编语言第二章/">汇编语言第二章</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="第二章数据表示和寻址"><a href="#第二章数据表示和寻址" class="headerlink" title="第二章数据表示和寻址"></a>第二章数据表示和寻址</h3><h4 id="常量的表达"><a href="#常量的表达" class="headerlink" title="常量的表达"></a>常量的表达</h4><font color="#7FFF00"><br>重点：EQU用于数值等价时不能重复定义符号名，但是’=’允许有重复的赋值<br></font>
+
+
+<h4 id="变量的应用"><a href="#变量的应用" class="headerlink" title="变量的应用"></a>变量的应用</h4><p>小端方式：低对低，高对高 默认方式为小端方式</p>
+<h4 id="变量的定位"><a href="#变量的定位" class="headerlink" title="变量的定位"></a>变量的定位</h4><h5 id="ORG指令"><a href="#ORG指令" class="headerlink" title="ORG指令"></a>ORG指令</h5><p>ORG伪指令将参数表达的偏移地址作为当前偏移地址，格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ORG 参数</span><br><span class="line">例如：从偏移地址100H处安排数据或程序，可以使用语句</span><br><span class="line">格式为：</span><br><span class="line">org 100h</span><br></pre></td></tr></table></figure></p>
+<h5 id="ALIGN伪指令"><a href="#ALIGN伪指令" class="headerlink" title="ALIGN伪指令"></a>ALIGN伪指令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对齐</span><br></pre></td></tr></table></figure>
+<h4 id="变量属性"><a href="#变量属性" class="headerlink" title="变量属性"></a>变量属性</h4><ul>
+<li>地址属性– 指首个变量所在储存单元的逻辑地址，含有段基地址和偏移地址</li>
+<li>类型属性–指变量定义的数据单位，有字节量、字量、双字量、3字量、4字量和10字量，依次用类型名BYTE、WORD、DWORD、FWORD、QWORD和TBYTE表示</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>操作符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地址</td>
+<td>[]</td>
+<td>将括起的表达式作为存储器地址指针</td>
+</tr>
+<tr>
+<td>地址</td>
+<td>$</td>
+<td>返回当前的偏移地址</td>
+</tr>
+<tr>
+<td>地址</td>
+<td>OFFSET 变量名</td>
+<td>返回变量名所在段的偏移地址</td>
+</tr>
+<tr>
+<td>地址</td>
+<td>SEG 变量名</td>
+<td>返回段基地址（实地址存储模型）</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>类型名 PTR 变量名</td>
+<td>将变量名按照指定的类型使用</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>TYPE 变量名</td>
+<td>返回一个字量数值，表明变量名的类型</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>LENGTHOF 变量名</td>
+<td>返回整个变量的数据项数（既元素数）</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>SIZEOF 变量名</td>
+<td>返回整个变量占用的字节数</td>
+</tr>
+</tbody>
+</table>
+<h6 id="地址操作符"><a href="#地址操作符" class="headerlink" title="地址操作符"></a>地址操作符</h6><p>地址操作符用于获取变量名的地址属性</p>
+<h4 id="数据寻址方式"><a href="#数据寻址方式" class="headerlink" title="数据寻址方式"></a>数据寻址方式</h4><ul>
+<li>立即数寻址方式</li>
+<li>寄存器寻址方式</li>
+<li>储存器寻址方式</li>
+</ul>
+<h4 id="第二章课后习题"><a href="#第二章课后习题" class="headerlink" title="第二章课后习题"></a>第二章课后习题</h4><h6 id="说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量"><a href="#说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量" class="headerlink" title="说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量"></a>说明下列指令中源操作数的寻址方式。假设VARD是一个双字变量</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mov edx, 1234h   ;立即数</span><br><span class="line">mov edx, vard    ;直接</span><br><span class="line">mov edx, ebx     ;寄存器</span><br><span class="line">mov edx, [ebx]   ;寄存器间接</span><br><span class="line">mov edx, [ebx + 1234H]  ;寄存器相对</span><br><span class="line">mov edx, vard[ebx]      ;寄存器相对</span><br><span class="line">mov edx, [ebx + edi]    ;基址变址</span><br><span class="line">mov edx, [ebx + edi + 1234h]  ;相对基址变址</span><br><span class="line">mov edx, vard[esi + edi]     ; 相对基址变址</span><br><span class="line">mov edx, [ebp * 4]       ;带比例寻址</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-汇编语言第一章" class="article article-type-post" itemscope="" itemprop="blogPost">
   
@@ -364,6 +492,11 @@
 <h6 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h6><p>寄存器EDX是32位的，其中低16位的名称是DX，还可以分成两个8位的寄存器，其中D(0) - D(7)和D(8)D(15)部分可以用名称DL和DH</p>
 <h6 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h6><p>IA-32处理器有6个段寄存器，它们都是16位的</p>
 <h6 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h6><p>逻辑地址由段基地址和偏移地址两部分组成。代码段中下一条要执行的指令由CS和EIP寄存器指示，后者在实地址模型中起作用的仅有IP寄存器部分。</p>
+<h6 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h6><p>MASM要求汇编语言源程序文件的扩展名是ASM，汇编产生扩展名为OBJ的文件被称为目标模块文件，编写32位Windows应用程序应选择FLAT储存模型</p>
+<h5 id="问答题"><a href="#问答题" class="headerlink" title="问答题"></a>问答题</h5><h6 id="IA-32处理器有哪三类基本段，各有什么用途？"><a href="#IA-32处理器有哪三类基本段，各有什么用途？" class="headerlink" title="IA-32处理器有哪三类基本段，各有什么用途？"></a>IA-32处理器有哪三类基本段，各有什么用途？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">代码段：存放程序的指令代码</span><br><span class="line">数据段：存放当前运行程序所用的数据</span><br><span class="line">堆栈段：主存中堆栈所在的区域</span><br></pre></td></tr></table></figure>
+<h6 id="汇编语言语句有哪两种，每种语句由哪四个部分组成"><a href="#汇编语言语句有哪两种，每种语句由哪四个部分组成" class="headerlink" title="汇编语言语句有哪两种，每种语句由哪四个部分组成"></a>汇编语言语句有哪两种，每种语句由哪四个部分组成</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">汇编语句有两种：1.执行性语句.2.说明性语句</span><br><span class="line"></span><br><span class="line">每个语句有四部分组成：标号、指令助记符、操作数或参数、注释</span><br></pre></td></tr></table></figure>
+<h6 id="MASM汇编语言中，下面哪些是程序员可以使用的自定义标识符。FFH、DS、Again、next、-data、h-ascii、6364b、flat"><a href="#MASM汇编语言中，下面哪些是程序员可以使用的自定义标识符。FFH、DS、Again、next、-data、h-ascii、6364b、flat" class="headerlink" title="MASM汇编语言中，下面哪些是程序员可以使用的自定义标识符。FFH、DS、Again、next、@data、h_ascii、6364b、flat"></a>MASM汇编语言中，下面哪些是程序员可以使用的自定义标识符。FFH、DS、Again、next、@data、h_ascii、6364b、flat</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FFH、Again、next、h_ascii</span><br><span class="line">其他符号错误的原因：</span><br><span class="line">DS是数据段寄存器名</span><br><span class="line">6364b是数字开头</span><br><span class="line">@data是汇编语言使用预定义符号，表示数据段地址</span><br><span class="line">flat是表示平展存储模型的关键字</span><br></pre></td></tr></table></figure>
+<h6 id="汇编语言程序的开发有哪4个步骤，分别利用什么程序完成，产生什么输出文件"><a href="#汇编语言程序的开发有哪4个步骤，分别利用什么程序完成，产生什么输出文件" class="headerlink" title="汇编语言程序的开发有哪4个步骤，分别利用什么程序完成，产生什么输出文件"></a>汇编语言程序的开发有哪4个步骤，分别利用什么程序完成，产生什么输出文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">汇编语言程序的开发有4个步骤</span><br><span class="line">编辑：用文本编辑器形成一个以ASM为扩展名的源程序文件</span><br><span class="line">汇编：用汇编程序将ASM文件转化成OBJ模块文件</span><br><span class="line">连接：用连接程序将一个或多个目标文件链接成一个EXE或COM可执行文件</span><br><span class="line">调试：用调试程序排除错误，生成正确的可执行文件。</span><br></pre></td></tr></table></figure>
 
       
     </div>
