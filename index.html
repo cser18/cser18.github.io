@@ -258,6 +258,125 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-汇编语言第三章" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/20/汇编语言第三章/" class="article-date">
+      <time datetime="2018-12-20T03:26:00.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/汇编语言第三章/">汇编语言第三章</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="第三章-通用数据处理指令"><a href="#第三章-通用数据处理指令" class="headerlink" title="第三章 通用数据处理指令"></a>第三章 通用数据处理指令</h3><h4 id="PUSH指令"><a href="#PUSH指令" class="headerlink" title="PUSH指令"></a>PUSH指令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">push eax</span><br></pre></td></tr></table></figure>
+<p>等同如下两条指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sub esp, 4</span><br><span class="line">mov [esp], eax</span><br></pre></td></tr></table></figure></p>
+<h4 id="出栈指令POP"><a href="#出栈指令POP" class="headerlink" title="出栈指令POP"></a>出栈指令POP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pop eax</span><br></pre></td></tr></table></figure>
+<p>等同如下两条指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov eax, [esp]</span><br><span class="line">mov esp, 4</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>算术运算类指令</th>
+<th>名字</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CF</td>
+<td>进位标志位</td>
+<td>当发生进位或借位时为1</td>
+</tr>
+<tr>
+<td>OF</td>
+<td>溢出标志位</td>
+<td>产生溢出时为1</td>
+</tr>
+<tr>
+<td>ZF</td>
+<td>零标志位</td>
+<td>结果为0、ZF为1.否则反之</td>
+</tr>
+<tr>
+<td>PF</td>
+<td>奇偶标志位</td>
+<td>最低字节中1的个数、当最低字节中1的个数是0或偶数时，结果为1</td>
+</tr>
+<tr>
+<td>SF</td>
+<td>符号标志位</td>
+<td>运算结果的最高位（符号位）最高位为1则SF为1，否则为0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="带进位加法指令ADC"><a href="#带进位加法指令ADC" class="headerlink" title="带进位加法指令ADC"></a>带进位加法指令ADC</h4><p>带进位的加法ADC（Add with Carry）除完成ADD加法运算外，还要加上进位CF，结果送到目的操作数，按定义影响6个状态标志位。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ADC reg, imm/reg/mem ; 带进位加法 reg = reg + imm/reg/mem + CF</span><br><span class="line">ADC mem, imm/reg     ; 带进位加法 mem = mem + imm/reg/CF</span><br></pre></td></tr></table></figure></p>
+<h4 id="INC增量指令"><a href="#INC增量指令" class="headerlink" title="INC增量指令"></a>INC增量指令</h4><p>增量指令INC只有一个操作数，对操作数加1（增量）再将结果返回原处。操作数是寄存器或储存单元，格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INC reg/mem    ;加1</span><br></pre></td></tr></table></figure>
+<font color="#7FFF00"><br>重点：设计增量指令的目的，主要是针对计数器和地址指针进行调整，所以它不影响进位CF标志位，但是影响其他状态标志位。<br></font>
+
+<h4 id="减法指令"><a href="#减法指令" class="headerlink" title="减法指令"></a>减法指令</h4><p>减法指令DEC（Decrement）对操作数减一再将结果返回到原处。格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEC reg/mem     ; 减一 reg/mem = reg/mem - 1</span><br></pre></td></tr></table></figure></p>
+<font color="#7FFF00"><br>重点：DEC指令与INC指令相对应，也主要用于对计数器和地址进行调整，不影响CF标志位，但是影响其他标志位。<br></font>
+
+<h4 id="乘法和除法指令"><a href="#乘法和除法指令" class="headerlink" title="乘法和除法指令"></a>乘法和除法指令</h4><h5 id="乘法指令-mul"><a href="#乘法指令-mul" class="headerlink" title="乘法指令 mul"></a>乘法指令 mul</h5><p>(1) 两个相乘的数，两个相乘的数，要么都是8位，要么都是16位，如果是8位，一个默认放在AL中，另一个放在8位reg或内存字节中；如果是16位，一个默认放在AX中，另一个放在16位reg或内存字单元中。</p>
+<p>(2)结果：如果是8位的乘法，结果默认放在AX中，如果是16位的乘法，结果高位放在DX中，低位放在AX中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mul reg</span><br><span class="line">mul 内存单元</span><br></pre></td></tr></table></figure>
+<h5 id="除法指令-div"><a href="#除法指令-div" class="headerlink" title="除法指令 div"></a>除法指令 div</h5><p>(1) 除法：有8位和16位两种，在一个reg或内存单元中</p>
+<p>(2) 被除数：默认放在AX或DX和AX中，如果除数是8位，被除数则是16位，默认在AX中存放；如果除数为16位，被除数则为32位，在DX和AX中存放，DX放高16位，AX存放低16位</p>
+<p>(3) 结果：如果除数为8位，则AL储存除法操作的商，AH在储存除法操作的余数；如果除数是16位，则AX存储除法操作的商，DX存储除法操作的余数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">格式如下：</span><br><span class="line">div reg</span><br><span class="line">div 内存单元</span><br></pre></td></tr></table></figure>
+<h4 id="移位指令"><a href="#移位指令" class="headerlink" title="移位指令"></a>移位指令</h4><p>移位指令分为逻辑（Logic）移位和算术（Arithmetic）移位，分别具有左移位和右移位操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SHL reg/mem, i8/CL   ;逻辑左移、最低位补0高位进入CF位</span><br><span class="line">SHR reg/mem, i8/CL ;逻辑右移， 高位补0低位进入CF</span><br><span class="line">SAL reg/mem, i8/CL ;算术左移 与SHL是同一条指令</span><br><span class="line">SAR reg/mem, i8/CL ;算术右移 最高位不变低位进入CF</span><br></pre></td></tr></table></figure></p>
+<p>SHL指令执行一次逻辑左移位，原操作数每位的权增加了一倍，相当于乘2；SHR指令执行一次逻辑右移位，相当于除以2，商在操作数中，余数由CF标志位反映。</p>
+<h4 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h4><h6 id="问：逻辑与运算为什么也称为逻辑乘"><a href="#问：逻辑与运算为什么也称为逻辑乘" class="headerlink" title="问：逻辑与运算为什么也称为逻辑乘"></a>问：逻辑与运算为什么也称为逻辑乘</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：逻辑与运算规则类似二进制的乘法，所以称其为逻辑乘。</span><br></pre></td></tr></table></figure>
+<h6 id="问：使用mov指令实现交换指令-“XCHG-EBX-EDI-”"><a href="#问：使用mov指令实现交换指令-“XCHG-EBX-EDI-”" class="headerlink" title="问：使用mov指令实现交换指令 “XCHG EBX, [EDI]”"></a>问：使用mov指令实现交换指令 “XCHG EBX, [EDI]”</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov eax, ebx</span><br><span class="line">mov ebx, [edi]</span><br><span class="line">mov [edi], eax</span><br></pre></td></tr></table></figure>
+<h6 id="问：假设当前ESP-0012FFB0H-说明下面每一条指令后ESP等于多少？"><a href="#问：假设当前ESP-0012FFB0H-说明下面每一条指令后ESP等于多少？" class="headerlink" title="问：假设当前ESP = 0012FFB0H, 说明下面每一条指令后ESP等于多少？"></a>问：假设当前ESP = 0012FFB0H, 说明下面每一条指令后ESP等于多少？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">push eax  ; 0012FFACH</span><br><span class="line">push dx   ; 0012FFAAH</span><br><span class="line">push dword ptr 0f79h ;0012FFA6H</span><br><span class="line">pop eax              ;0012FFAAH</span><br><span class="line">pop word ptr[bx]     ;0012FFACH;</span><br><span class="line">pop ebx              ;0012FFB0H</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">###### 问：如下程序片段实现了EAX乘以某个数X的功能，请判断X等于多少。请使用一条乘法指令实现上述功能。</span><br></pre></td></tr></table></figure>
+<p>mov ecx, eax<br>shl eax, 3<br>lea eax, [eax + eax <em> 8]<br>sub eax, ecx<br><code>`</code><br>答： 8 </em> 8 + 8 - 1 = 71</p>
+<p>imul eax, 71</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-汇编语言第二章" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
