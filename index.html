@@ -258,6 +258,148 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-汇编语言第四章" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/20/汇编语言第四章/" class="article-date">
+      <time datetime="2018-12-20T14:20:00.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/汇编语言第四章/">汇编语言第四章</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="第四章（这章是编程的重点）"><a href="#第四章（这章是编程的重点）" class="headerlink" title="第四章（这章是编程的重点）"></a>第四章（这章是编程的重点）</h3><h4 id="条件转移指令"><a href="#条件转移指令" class="headerlink" title="条件转移指令"></a>条件转移指令</h4><table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>标志位</th>
+<th>中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JZ/JE</td>
+<td>ZF = 1</td>
+<td>等于零/想等 </td>
+</tr>
+<tr>
+<td>JNZ/JNE</td>
+<td>ZF = 0</td>
+<td>不等于零/不想等</td>
+</tr>
+<tr>
+<td>JS</td>
+<td>SF = 1</td>
+<td>符号为负</td>
+</tr>
+<tr>
+<td>JNS</td>
+<td>SF = 0</td>
+<td>符号为正</td>
+</tr>
+<tr>
+<td>JC/JB/JNAE</td>
+<td>CF = 1</td>
+<td>进位/低于/不高于等于</td>
+</tr>
+<tr>
+<td>JNC/JNB/JAE</td>
+<td>CF = 0</td>
+<td>无进位/不低于/高于等于</td>
+</tr>
+<tr>
+<td>JBE/JNA</td>
+<td>CF = 1 或 ZF = 1</td>
+<td>低于等于/不高于</td>
+</tr>
+<tr>
+<td>JNBE/JA</td>
+<td>CF = 0 且 ZF = 0</td>
+<td>不低于等于/高于</td>
+</tr>
+<tr>
+<td>JL/JNGE</td>
+<td>SF ≠ OF</td>
+<td>小于/不大于等于</td>
+</tr>
+<tr>
+<td>JNL/JGE</td>
+<td>SF = OF</td>
+<td>不小于/大于等于</td>
+</tr>
+<tr>
+<td>JLE/JNG</td>
+<td>SF ≠ OF 或 ZF = 1</td>
+<td>小于等于/不大于</td>
+</tr>
+<tr>
+<td>JNLE/ JG</td>
+<td>SF = OF 且 ZF = 0</td>
+<td>不小于等于/大于</td>
+</tr>
+</tbody>
+</table>
+<h4 id="循环指令"><a href="#循环指令" class="headerlink" title="循环指令"></a>循环指令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LOOP 指令</span><br><span class="line"></span><br><span class="line">loop label ; EAX = EAX - 1</span><br><span class="line">           ; 若ECX≠0，循环、跳转到LABLE位置，即EIP = EIP +　位移量</span><br><span class="line">           ；否则，　顺序执行</span><br></pre></td></tr></table></figure>
+<h4 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test 指令</span><br></pre></td></tr></table></figure>
+<p>Test命令将两个操作数进行逻辑与运算，并根据运算结果设置相关的标志位。但是，Test命令的两个操作数不会被改变。运算结果在设置过相关标记位后会被丢弃。</p>
+<h4 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h4><h5 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h5><p>“CMP EAX, 3721H“指令之后JZ指令，发生转移的条件是EAX = 3721H, 此时ZF = 1</p>
+<h5 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h5><p>在EDX等于0时转移，可以使用指令”CMP EDX, 0”,也可以使用“TEST EDX,0 ”构成条件,然后使用JE指令实现转移。</p>
+<h5 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h5><p>已知var1、var2、var3、var4是32位无符号整数(假设var2大于7)，用汇编语言程序片段实现了C++语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mov eax, var1</span><br><span class="line">mov ebx, 6</span><br><span class="line">mul ebx</span><br><span class="line">mov ebx, val2</span><br><span class="line">sub ebx, 7</span><br><span class="line">div ebx</span><br><span class="line">add eax, var3</span><br><span class="line">mov var4, eax</span><br></pre></td></tr></table></figure></p>
+<h5 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h5><p>编写一个程序，先提示输入数字”Input Number: 0-9”, 然后在下一行显示输入的数字，结束；如果不是键入了0-9数字，就提示错误”Error”,继续等待输入数字。</p>
+<p>方法一：字符输入输出子程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;使用数据段</span><br><span class="line">inmsg byte &apos;Input number(0-9): &apos;,0</span><br><span class="line">ermsg byte 0dh,0ah, &apos;Error! Input again: &apos;, 0</span><br><span class="line">; 代码段</span><br><span class="line">mov eax, offset inmsg ; 提示输入数字</span><br><span class="line">call dispmsg</span><br></pre></td></tr></table></figure>
+<p>方法二： 使用数字输入输出子程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">again: call readuid</span><br><span class="line">       cmp eax, 0</span><br><span class="line">       jb erdisp</span><br><span class="line">       cmp eax, 9</span><br><span class="line">       ja erdisp</span><br><span class="line">       call dispuid</span><br><span class="line">       jmp done</span><br><span class="line">erdisp:mov eax, offset ermsg</span><br><span class="line">       call dispmsg</span><br><span class="line">       jmp again</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-汇编语言第三章" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -346,7 +488,7 @@
 <p>SHL指令执行一次逻辑左移位，原操作数每位的权增加了一倍，相当于乘2；SHR指令执行一次逻辑右移位，相当于除以2，商在操作数中，余数由CF标志位反映。</p>
 <h4 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h4><h6 id="问：逻辑与运算为什么也称为逻辑乘"><a href="#问：逻辑与运算为什么也称为逻辑乘" class="headerlink" title="问：逻辑与运算为什么也称为逻辑乘"></a>问：逻辑与运算为什么也称为逻辑乘</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：逻辑与运算规则类似二进制的乘法，所以称其为逻辑乘。</span><br></pre></td></tr></table></figure>
 <h6 id="问：使用mov指令实现交换指令-“XCHG-EBX-EDI-”"><a href="#问：使用mov指令实现交换指令-“XCHG-EBX-EDI-”" class="headerlink" title="问：使用mov指令实现交换指令 “XCHG EBX, [EDI]”"></a>问：使用mov指令实现交换指令 “XCHG EBX, [EDI]”</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov eax, ebx</span><br><span class="line">mov ebx, [edi]</span><br><span class="line">mov [edi], eax</span><br></pre></td></tr></table></figure>
-<h6 id="问：假设当前ESP-0012FFB0H-说明下面每一条指令后ESP等于多少？"><a href="#问：假设当前ESP-0012FFB0H-说明下面每一条指令后ESP等于多少？" class="headerlink" title="问：假设当前ESP = 0012FFB0H, 说明下面每一条指令后ESP等于多少？"></a>问：假设当前ESP = 0012FFB0H, 说明下面每一条指令后ESP等于多少？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">push eax  ; 0012FFACH</span><br><span class="line">push dx   ; 0012FFAAH</span><br><span class="line">push dword ptr 0f79h ;0012FFA6H</span><br><span class="line">pop eax              ;0012FFAAH</span><br><span class="line">pop word ptr[bx]     ;0012FFACH;</span><br><span class="line">pop ebx              ;0012FFB0H</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">###### 问：如下程序片段实现了EAX乘以某个数X的功能，请判断X等于多少。请使用一条乘法指令实现上述功能。</span><br></pre></td></tr></table></figure>
+<h6 id="问：假设当前ESP-0012FFB0H-说明下面每一条指令后ESP等于多少？"><a href="#问：假设当前ESP-0012FFB0H-说明下面每一条指令后ESP等于多少？" class="headerlink" title="问：假设当前ESP = 0012FFB0H, 说明下面每一条指令后ESP等于多少？"></a>问：假设当前ESP = 0012FFB0H, 说明下面每一条指令后ESP等于多少？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">push eax             ;0012FFACH</span><br><span class="line">push dx              ;0012FFAAH</span><br><span class="line">push dword ptr 0f79h ;0012FFA6H</span><br><span class="line">pop eax              ;0012FFAAH</span><br><span class="line">pop word ptr[bx]     ;0012FFACH;</span><br><span class="line">pop ebx              ;0012FFB0H</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">###### 问：如下程序片段实现了EAX乘以某个数X的功能，请判断X等于多少。请使用一条乘法指令实现上述功能。</span><br></pre></td></tr></table></figure>
 <p>mov ecx, eax<br>shl eax, 3<br>lea eax, [eax + eax <em> 8]<br>sub eax, ecx<br><code>`</code><br>答： 8 </em> 8 + 8 - 1 = 71</p>
 <p>imul eax, 71</p>
 
