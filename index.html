@@ -189,7 +189,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/汇编/" style="font-size: 20px;">汇编</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+                        <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/汇编/" style="font-size: 20px;">汇编</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a>
                     </div>
                 </section>
                 
@@ -257,6 +257,137 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-计算机网络复习大纲-考试版" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/21/计算机网络复习大纲-考试版/" class="article-date">
+      <time datetime="2018-12-21T07:56:00.000Z" itemprop="datePublished">2018-12-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/21/计算机网络复习大纲-考试版/">计算机网络复习大纲(考试版)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="第一章：计算机网络概述"><a href="#第一章：计算机网络概述" class="headerlink" title="第一章：计算机网络概述"></a>第一章：计算机网络概述</h3><h5 id="问-1-OSI五层协议的体系结构，每层叫什么名字，功能是什么？"><a href="#问-1-OSI五层协议的体系结构，每层叫什么名字，功能是什么？" class="headerlink" title="问: 1. OSI五层协议的体系结构，每层叫什么名字，功能是什么？"></a>问: 1. OSI五层协议的体系结构，每层叫什么名字，功能是什么？</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">物理层：为数据端设备提供传送数据通路、传输数据。</span><br><span class="line"></span><br><span class="line">数据链路层：数据链路层层简称为链路层，两台主机之间的数据传输总是在一条链路上传送的，这还需要专门的链路层的协议。在两个相邻节点之间传送数据时数据链路层将网络层交下来的IP数据报组装成帧，在两个相邻节点的间传送帧。</span><br><span class="line"></span><br><span class="line">网络层：网络层负责为分组交换网上的不同主机提供通信服务</span><br><span class="line"></span><br><span class="line">传输层：运输层的任务就是负责向两台主机中进程之间的通信提供通用的数据传输服务</span><br><span class="line"></span><br><span class="line">应用层：应用层是体系结构中的最高层。应用层的任务是通过应用进程间的交互来完成特定网络应用。</span><br></pre></td></tr></table></figure>
+<h5 id="问：2-TCP-IP体系结构，每层叫什么名字，功能是什么？"><a href="#问：2-TCP-IP体系结构，每层叫什么名字，功能是什么？" class="headerlink" title="问：2. TCP/IP体系结构，每层叫什么名字，功能是什么？"></a>问：2. TCP/IP体系结构，每层叫什么名字，功能是什么？</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">网络接口层，网际层，传输层，应用层</span><br><span class="line"></span><br><span class="line">网络接口层：接收IP数据并通过特定的网络进行传输，或从网络上接收物理帧，抽取IP数据报并转交给网际层。</span><br><span class="line"></span><br><span class="line">网际层：负责相同或不同网络中计算机之间的通信，主要处理异构网络的互联，分组转发和路由选择。</span><br><span class="line"></span><br><span class="line">传输层：为应用进程提供端到端的逻辑连接。使用TCP和UDP协议，TCP提供面向连接的，可靠的数据传输服务，数据传输的单位是报文段。UDP提供无连接的，尽最大努力交付的数据传输服务，其数据传输的单位是用户数据报。</span><br><span class="line"></span><br><span class="line">应用层：通过应用进程的交互来完成特定的网络应用。应用层协议定义的是应用进程间通信和交互的规则，包括，HTTP，DNS，DHCP，FTP，SMTP，POP3等。</span><br></pre></td></tr></table></figure>
+<h3 id="第二章-物理层"><a href="#第二章-物理层" class="headerlink" title="第二章 物理层"></a>第二章 物理层</h3><h5 id="问：-1-物理层的接口有哪几个方面的特性？各包含些什么内容？"><a href="#问：-1-物理层的接口有哪几个方面的特性？各包含些什么内容？" class="headerlink" title="问： 1. 物理层的接口有哪几个方面的特性？各包含些什么内容？"></a>问： 1. 物理层的接口有哪几个方面的特性？各包含些什么内容？</h5>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-汇编小项目" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/21/汇编小项目/" class="article-date">
+      <time datetime="2018-12-21T07:50:00.000Z" itemprop="datePublished">2018-12-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/21/汇编小项目/">汇编小项目</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h3><ul>
+<li>冒泡排序</li>
+<li>求斐波那契数列</li>
+</ul>
+<font color="#0099ff"><br>  一些转移指令的使用、call指令、ret指令、怎么定义数据段、和代码段、基础忘掉的同学可以看看我分享的汇编笔记<br></font>
+
+<p>代码部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line">; Sort.asm in Windows Console</span><br><span class="line">include io32.inc   ;包含32位输入输出文件</span><br><span class="line"></span><br><span class="line">;assume ss:sseg</span><br><span class="line">.data                    ;定义数据段</span><br><span class="line">    ; 冒泡算法</span><br><span class="line">	array dword 1000 dup (0)	            ;数据定义（数据待填）</span><br><span class="line">    Input byte &apos;please input a num : (按0结束)&apos;, 10,13,0 </span><br><span class="line">    InputChoice byte &apos;请输入你将要选择的序号为：&apos;,0</span><br><span class="line">    StartMsg byte &apos;欢迎来到汇编的世界&apos;,13,10,0</span><br><span class="line">    BubbleSortMsg byte &apos;1.Bubble Sort&apos;,13,10,0</span><br><span class="line">    ResultMsg byte &apos;*******Bubble Sort*******&apos;,13,10,0</span><br><span class="line">    EndMsg byte &apos;&lt;end&gt;&apos;,13,10,0</span><br><span class="line">    SortMsg byte &apos;正在进行升序冒泡排序:&apos;,13,10,0</span><br><span class="line">    EndSortMsg  byte 13,10,&apos;冒泡排序已结束&apos;,13,10,0</span><br><span class="line">    BlackSpaceMsg byte &apos; &apos;,0 ; 空格</span><br><span class="line">    ;求斐波那契数列</span><br><span class="line">    InputFibMsg byte &apos;2.求(0-N)个斐波那契数列&apos;,13,10,0</span><br><span class="line">    StartFibMsg byte &apos;******斐波那契数列******&apos;,13,10,0</span><br><span class="line">    InputFibNum byte &apos;请输入N的值：&apos;,0</span><br><span class="line">    EndFibMsg   byte 13,10,&apos;斐波那契数列结束&apos;,13,10,0</span><br><span class="line">    ;有限自动机</span><br><span class="line">    EndSystemProc byte &apos;结束程序选择1，回到主菜单请按2：&apos;,0</span><br><span class="line">    ByeMsg byte &apos;再见，小伙伴&apos;,13,10,0</span><br><span class="line">    MenuMsg byte &apos;*********************主菜单*********************&apos;,13,10,0</span><br><span class="line">    ;WTemp dword 2 dup(0)      ;  循环的数据</span><br><span class="line">    ;NTemp byte 0,0      ;  控制内层循环的次数</span><br><span class="line"></span><br><span class="line">.code                   ;定义代码段,以下是代码段</span><br><span class="line"></span><br><span class="line">Bubble proc</span><br><span class="line">     mov eax, offset ResultMsg</span><br><span class="line">     call dispmsg</span><br><span class="line">     xor  ebx, ebx</span><br><span class="line">     xor  ecx, ecx</span><br><span class="line">     mov  ecx, 1000</span><br><span class="line">     xor  edx, edx    ; 用edx 进行计数 </span><br><span class="line">     mov  ebx, offset array</span><br><span class="line">L:   mov  eax, offset Input  </span><br><span class="line">     call dispmsg</span><br><span class="line">     call readuid</span><br><span class="line">     cmp  eax, 0</span><br><span class="line">     jz R</span><br><span class="line">     mov  [ebx], eax</span><br><span class="line">     add  ebx, 4</span><br><span class="line">     inc  edx</span><br><span class="line">     loop L</span><br><span class="line">         </span><br><span class="line">Bubble endp</span><br><span class="line">;计算斐波那契数列模块</span><br><span class="line">FibArray proc</span><br><span class="line">    mov eax, offset StartFibMsg</span><br><span class="line">    call dispmsg</span><br><span class="line">    mov eax, offset InputFibNum</span><br><span class="line">    call dispmsg</span><br><span class="line">    call  readuid</span><br><span class="line">    ; 以下是斐波那契数列模块</span><br><span class="line">    mov ebx, offset array</span><br><span class="line">    xor esi, esi</span><br><span class="line">    mov esi, offset array</span><br><span class="line">    mov [ebx], eax     ;  数组的第0个空间代表要第几个数据</span><br><span class="line">    mov eax, 1</span><br><span class="line">    mov [ebx + 4], eax ; num[1] = 1</span><br><span class="line">    mov [ebx + 4 * 2], eax; num[2] = 1</span><br><span class="line">    ; num[3] = 2;   num[i] = num[i - 1] + num[i - 2]</span><br><span class="line">    xor eax, eax</span><br><span class="line">    mov eax, 3</span><br><span class="line">    mov ecx, 3</span><br><span class="line">Fib:</span><br><span class="line">    mov edx, [ebx + 4]</span><br><span class="line">    add edx, [ebx + 4 * 2]</span><br><span class="line">    mov [ebx + 4 * eax], edx</span><br><span class="line">    add ebx, 4</span><br><span class="line">    inc ecx      ; 循环相比较   ecx   作为一个寄存器    我觉得这样写可以     </span><br><span class="line">    cmp ecx, [esi]</span><br><span class="line">    jbe Fib</span><br><span class="line">    ;输出斐波那契数列</span><br><span class="line">    mov ecx, [esi]</span><br><span class="line">    mov ebx, offset array</span><br><span class="line">OutFib:</span><br><span class="line">    mov eax, [ebx + 4]</span><br><span class="line">    call dispuid</span><br><span class="line">    mov eax, offset BlackSpaceMsg</span><br><span class="line">    call dispmsg</span><br><span class="line">    add ebx, 4</span><br><span class="line">    loop OutFib</span><br><span class="line">    mov eax, offset EndFibMsg</span><br><span class="line">    call dis  </span><br><span class="line">FibArray endp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; 主函数模块</span><br><span class="line">start:</span><br><span class="line">    mov eax, offset MenuMsg   ;开始介绍</span><br><span class="line">    call dispmsg</span><br><span class="line">    mov eax, offset StartMsg</span><br><span class="line">    call dispmsg</span><br><span class="line">    mov eax, offset BubbleSortMsg  ;冒泡排序的信息</span><br><span class="line">    call dispmsg</span><br><span class="line">    mov eax, offset InputFibMsg     ; 斐波那契数列信息</span><br><span class="line">    call dispmsg</span><br><span class="line">    mov eax , offset InputChoice</span><br><span class="line">    call dispmsg</span><br><span class="line">    call readuid</span><br><span class="line">    cmp eax, 1</span><br><span class="line">    jz Bubble</span><br><span class="line">    cmp eax, 2</span><br><span class="line">    jz FibArray</span><br><span class="line"></span><br><span class="line">R:   </span><br><span class="line">    mov eax, offset EndMsg</span><br><span class="line">    call dispmsg</span><br><span class="line">    ; 下面的程序进行冒泡排序</span><br><span class="line">    xor esi, esi     ; 保存下有多少个数据</span><br><span class="line">    mov esi, edx</span><br><span class="line">    xor ecx, ecx    ; 让ecx清0</span><br><span class="line">    mov ecx, edx    ;循环多少次</span><br><span class="line">    dec ecx     ;循环的次数要减一  </span><br><span class="line">     </span><br><span class="line">;两层循环</span><br><span class="line">Outlay:</span><br><span class="line">    mov  edx, ecx</span><br><span class="line">    mov ebx, offset array </span><br><span class="line">Innlay:</span><br><span class="line">    mov  eax, [ebx]</span><br><span class="line">    cmp  eax, [ebx + 4]      </span><br><span class="line">    jbe  noswap        ;num[j] &gt;= num[j + 1] 不跳转</span><br><span class="line">    xchg eax, [ebx + 4]    ; 交换</span><br><span class="line">    mov  [ebx], eax      </span><br><span class="line">noswap:</span><br><span class="line">    add  ebx, 4</span><br><span class="line">    loop Innlay   ;内层循环</span><br><span class="line">    mov  ecx, edx         ;恢复外层循环的次数</span><br><span class="line">    loop Outlay</span><br><span class="line">    ;结果的输出</span><br><span class="line">    mov ecx, esi</span><br><span class="line">    xor ebx, ebx</span><br><span class="line">    mov ebx, offset array</span><br><span class="line">Tdis:</span><br><span class="line">    mov eax, [ebx]</span><br><span class="line">    call dispuid</span><br><span class="line">    mov eax, offset BlackSpaceMsg</span><br><span class="line">    call dispmsg</span><br><span class="line">    add ebx, 4</span><br><span class="line">    loop Tdis</span><br><span class="line">    mov eax, offset EndSortMsg</span><br><span class="line">    call dis</span><br><span class="line">dis:</span><br><span class="line">    call dispmsg</span><br><span class="line">    mov eax, offset EndSystemProc</span><br><span class="line">    call dispmsg</span><br><span class="line">    call readuid</span><br><span class="line">    cmp eax, 1    ;回到主菜单</span><br><span class="line">    jz disbye</span><br><span class="line">    cmp eax, 2</span><br><span class="line">    jz start</span><br><span class="line"></span><br><span class="line">disbye:</span><br><span class="line">    mov eax, offset ByeMsg</span><br><span class="line">    call dismsg</span><br><span class="line">dismsg:</span><br><span class="line">    call dispmsg</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">exit 0</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-汇编语言第四章" class="article article-type-post" itemscope="" itemprop="blogPost">
   
