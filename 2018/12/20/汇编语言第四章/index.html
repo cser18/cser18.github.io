@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Byte">
 <meta property="og:description" content="第四章（这章是编程的重点）条件转移指令   助记符 标志位 中文说明     JZ/JE ZF = 1 等于零/想等    JNZ/JNE ZF = 0 不等于零/不想等   JS SF = 1 符号为负   JNS SF = 0 符号为正   JC/JB/JNAE CF = 1 进位/低于/不高于等于   JNC/JNB/JAE CF = 0 无进位/不低于/高于等于   JBE/JNA CF">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-20T14:20:58.214Z">
+<meta property="og:updated_time" content="2018-12-22T08:15:41.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="汇编语言第四章">
 <meta name="twitter:description" content="第四章（这章是编程的重点）条件转移指令   助记符 标志位 中文说明     JZ/JE ZF = 1 等于零/想等    JNZ/JNE ZF = 0 不等于零/不想等   JS SF = 1 符号为负   JNS SF = 0 符号为正   JC/JB/JNAE CF = 1 进位/低于/不高于等于   JNC/JNB/JAE CF = 0 无进位/不低于/高于等于   JBE/JNA CF">
@@ -374,7 +374,7 @@
 <p>Test命令将两个操作数进行逻辑与运算，并根据运算结果设置相关的标志位。但是，Test命令的两个操作数不会被改变。运算结果在设置过相关标记位后会被丢弃。</p>
 <h4 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h4><h5 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h5><p>“CMP EAX, 3721H“指令之后JZ指令，发生转移的条件是EAX = 3721H, 此时ZF = 1</p>
 <h5 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h5><p>在EDX等于0时转移，可以使用指令”CMP EDX, 0”,也可以使用“TEST EDX,0 ”构成条件,然后使用JE指令实现转移。</p>
-<h5 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h5><p>已知var1、var2、var3、var4是32位无符号整数(假设var2大于7)，用汇编语言程序片段实现了C++语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mov eax, var1</span><br><span class="line">mov ebx, 6</span><br><span class="line">mul ebx</span><br><span class="line">mov ebx, val2</span><br><span class="line">sub ebx, 7</span><br><span class="line">div ebx</span><br><span class="line">add eax, var3</span><br><span class="line">mov var4, eax</span><br></pre></td></tr></table></figure></p>
+<h5 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h5><p>已知var1、var2、var3、var4是32位无符号整数(假设var2大于7)，用汇编语言程序片段实现了C++语句：var4 = (var2 * var3) / (var4 + 8 - 47)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mov eax, var1</span><br><span class="line">mov ebx, 6</span><br><span class="line">mul ebx</span><br><span class="line">mov ebx, val2</span><br><span class="line">sub ebx, 7</span><br><span class="line">div ebx</span><br><span class="line">add eax, var3</span><br><span class="line">mov var4, eax</span><br></pre></td></tr></table></figure></p>
 <h5 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h5><p>编写一个程序，先提示输入数字”Input Number: 0-9”, 然后在下一行显示输入的数字，结束；如果不是键入了0-9数字，就提示错误”Error”,继续等待输入数字。</p>
 <p>方法一：字符输入输出子程序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;使用数据段</span><br><span class="line">inmsg byte &apos;Input number(0-9): &apos;,0</span><br><span class="line">ermsg byte 0dh,0ah, &apos;Error! Input again: &apos;, 0</span><br><span class="line">; 代码段</span><br><span class="line">mov eax, offset inmsg ; 提示输入数字</span><br><span class="line">call dispmsg</span><br></pre></td></tr></table></figure>
@@ -390,7 +390,7 @@
         <p><span>本文标题:</span><a href="/2018/12/20/汇编语言第四章/">汇编语言第四章</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 涵小书 的个人博客">涵小书</a></p>
         <p><span>发布时间:</span>2018年12月20日 - 22时20分</p>
-        <p><span>最后更新:</span>2018年12月20日 - 22时20分</p>
+        <p><span>最后更新:</span>2018年12月22日 - 16时15分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/20/汇编语言第四章/" title="汇编语言第四章">http://yoursite.com/2018/12/20/汇编语言第四章/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/12/20/汇编语言第四章/　　作者: 涵小书" title=""></span>
