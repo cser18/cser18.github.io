@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Byte">
 <meta property="og:description" content="一、单选题（每小题2 分，共30 分）1．用DEBUG调试汇编语言程序时，显示数据的地址是5000:0400，此时数据的物理地址是（      ）A.50400H         B.5040H        C.54000H        D.5400H 12答案为： A段地址：5000H 偏移地址：0400H  计算公式为：5000H * 16 + 0400 = 50400H ．设ES=110">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-22T06:14:51.673Z">
+<meta property="og:updated_time" content="2018-12-22T06:18:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="汇编期末A卷详解">
 <meta name="twitter:description" content="一、单选题（每小题2 分，共30 分）1．用DEBUG调试汇编语言程序时，显示数据的地址是5000:0400，此时数据的物理地址是（      ）A.50400H         B.5040H        C.54000H        D.5400H 12答案为： A段地址：5000H 偏移地址：0400H  计算公式为：5000H * 16 + 0400 = 50400H ．设ES=110">
@@ -314,7 +314,8 @@
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答案：D</span><br></pre></td></tr></table></figure>
 <h5 id="8-完成同指令LEA-AX-BUF-相同功能的指令是"><a href="#8-完成同指令LEA-AX-BUF-相同功能的指令是" class="headerlink" title="8. 完成同指令LEA  AX,BUF 相同功能的指令是(    )"></a>8. 完成同指令LEA  AX,BUF 相同功能的指令是(    )</h5><pre><code>A. MOV AX, BUF     B. LDS AX,BUF   C. MOV  AX,SEG BUF     D. MOV  AX,OFFSET BUF 
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答案：D</span><br><span class="line">重点： LEA指令</span><br></pre></td></tr></table></figure>
-<h5 id="9-循环指令LOOP-NEXT-终止循环操作的条件是"><a href="#9-循环指令LOOP-NEXT-终止循环操作的条件是" class="headerlink" title="9. 循环指令LOOP NEXT,终止循环操作的条件是(    )"></a>9. 循环指令LOOP NEXT,终止循环操作的条件是(    )</h5><p>A. CX=0且ZF=0    B. CX=0    C. CX=0 且ZF=1    D. CX=0 或ZF=1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答案：B</span><br></pre></td></tr></table></figure></p>
+<h5 id="9-循环指令LOOP-NEXT-终止循环操作的条件是"><a href="#9-循环指令LOOP-NEXT-终止循环操作的条件是" class="headerlink" title="9. 循环指令LOOP NEXT,终止循环操作的条件是(    )"></a>9. 循环指令LOOP NEXT,终止循环操作的条件是(    )</h5><pre><code>A. CX=0且ZF=0    B. CX=0    C. CX=0 且ZF=1    D. CX=0 或ZF=1
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答案：B</span><br></pre></td></tr></table></figure>
 <h5 id="10-有数据定义NUM-DB-2-DUP-1-2-3，4-5-，NUM占有-字节存储单元。"><a href="#10-有数据定义NUM-DB-2-DUP-1-2-3，4-5-，NUM占有-字节存储单元。" class="headerlink" title="10.有数据定义NUM DB 2 DUP ( 1,2,3，4,5) ，NUM占有(      )字节存储单元。"></a>10.有数据定义NUM DB 2 DUP ( 1,2,3，4,5) ，NUM占有(      )字节存储单元。</h5><pre><code>A.4               B.5                C.6              D.10
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DB 定义字节</span><br><span class="line">DUP（1，2，3，4，5） 五个字节</span><br><span class="line">2 * 5 = 10</span><br><span class="line">共10个字节</span><br></pre></td></tr></table></figure>
 <h5 id="在8086-8088系统中，用于确定堆栈栈顶地址的寄存器有"><a href="#在8086-8088系统中，用于确定堆栈栈顶地址的寄存器有" class="headerlink" title=".在8086/8088系统中，用于确定堆栈栈顶地址的寄存器有(      )"></a>.在8086/8088系统中，用于确定堆栈栈顶地址的寄存器有(      )</h5><pre><code>A.CS:IP          B.SS:SP     C.DS:SI        D.DS:DI
@@ -360,7 +361,7 @@
         <p><span>本文标题:</span><a href="/2018/12/22/汇编期末A卷详解/">汇编期末A卷详解</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 涵小书 的个人博客">涵小书</a></p>
         <p><span>发布时间:</span>2018年12月22日 - 13时31分</p>
-        <p><span>最后更新:</span>2018年12月22日 - 14时14分</p>
+        <p><span>最后更新:</span>2018年12月22日 - 14时18分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/22/汇编期末A卷详解/" title="汇编期末A卷详解">http://yoursite.com/2018/12/22/汇编期末A卷详解/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/12/22/汇编期末A卷详解/　　作者: 涵小书" title=""></span>
