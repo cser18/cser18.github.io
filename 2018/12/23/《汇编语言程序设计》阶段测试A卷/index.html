@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
+  
+  
+  
+  
+  <title>《汇编语言程序设计》阶段测试A卷 | Byte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="重要说明！试卷选择错误，将按照 0 分处理！  一、 单选题（每小题 2 分，共 20 分）1．已知 X=78,Y=-83 则[X+Y]补=（    ）A.0F5H     B.0A1H     C.0FBH     D.65H  123[-5] 在计算机中负数以补码的形式存在。原码：00000101 反码 11111010 补码 11111011 0FB 所以答案选C 2．8086/8088的存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《汇编语言程序设计》阶段测试A卷">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/《汇编语言程序设计》阶段测试A卷/index.html">
+<meta property="og:site_name" content="Byte">
+<meta property="og:description" content="重要说明！试卷选择错误，将按照 0 分处理！  一、 单选题（每小题 2 分，共 20 分）1．已知 X=78,Y=-83 则[X+Y]补=（    ）A.0F5H     B.0A1H     C.0FBH     D.65H  123[-5] 在计算机中负数以补码的形式存在。原码：00000101 反码 11111010 补码 11111011 0FB 所以答案选C 2．8086/8088的存">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-23T09:49:12.191Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《汇编语言程序设计》阶段测试A卷">
+<meta name="twitter:description" content="重要说明！试卷选择错误，将按照 0 分处理！  一、 单选题（每小题 2 分，共 20 分）1．已知 X=78,Y=-83 则[X+Y]补=（    ）A.0F5H     B.0A1H     C.0FBH     D.65H  123[-5] 在计算机中负数以补码的形式存在。原码：00000101 反码 11111010 补码 11111011 0FB 所以答案选C 2．8086/8088的存">
+  
+    <link rel="alternative" href="/atom.xml" title="Byte" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/L2.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">涵小书</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/DL/">深度学习</a></li>
+                        
+                            <li><a href="/digital/">日志</a></li>
+                        
+                            <li><a href="/javaee/">java学习</a></li>
+                        
+                            <li><a href="/Algorithm/">算法</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="/xxxxx" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/汇编/" style="font-size: 20px;">汇编</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a>
+                    </div>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">爱动漫,爱十二,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">涵小书</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/L2.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">涵小书</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/DL/">深度学习</a></li>
+                
+                    <li><a href="/digital/">日志</a></li>
+                
+                    <li><a href="/javaee/">java学习</a></li>
+                
+                    <li><a href="/Algorithm/">算法</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-《汇编语言程序设计》阶段测试A卷" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/23/《汇编语言程序设计》阶段测试A卷/" class="article-date">
+      <time datetime="2018-12-23T09:48:51.000Z" itemprop="datePublished">2018-12-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《汇编语言程序设计》阶段测试A卷
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>重要说明！试卷选择错误，将按照 0 分处理！ </p>
+<h3 id="一、-单选题（每小题-2-分，共-20-分）"><a href="#一、-单选题（每小题-2-分，共-20-分）" class="headerlink" title="一、 单选题（每小题 2 分，共 20 分）"></a>一、 单选题（每小题 2 分，共 20 分）</h3><h5 id="1．已知-X-78-Y-83-则-X-Y-补-（-）"><a href="#1．已知-X-78-Y-83-则-X-Y-补-（-）" class="headerlink" title="1．已知 X=78,Y=-83 则[X+Y]补=（    ）"></a>1．已知 X=78,Y=-83 则[X+Y]补=（    ）</h5><pre><code>A.0F5H     B.0A1H     C.0FBH     D.65H 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[-5] 在计算机中负数以补码的形式存在。</span><br><span class="line">原码：00000101 反码 11111010 补码 11111011 </span><br><span class="line">0FB 所以答案选C</span><br></pre></td></tr></table></figure>
+<h5 id="2．8086-8088的存储器组织是将存储器划分为段，可作为段的起始地址的是（-）。"><a href="#2．8086-8088的存储器组织是将存储器划分为段，可作为段的起始地址的是（-）。" class="headerlink" title="2．8086/8088的存储器组织是将存储器划分为段，可作为段的起始地址的是（    ）。"></a>2．8086/8088的存储器组织是将存储器划分为段，可作为段的起始地址的是（    ）。</h5><pre><code>A．185A2H         B.00020H      C．01004H      D. 0AB568H 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答案：B</span><br><span class="line">段基地址最低四位为0</span><br></pre></td></tr></table></figure>
+<h5 id="3．MOV-AX-COUNT-BX-SI-，则源操作数的寻址方式为（-）"><a href="#3．MOV-AX-COUNT-BX-SI-，则源操作数的寻址方式为（-）" class="headerlink" title="3．MOV AX,COUNT[BX][SI]，则源操作数的寻址方式为（  ）"></a>3．MOV AX,COUNT[BX][SI]，则源操作数的寻址方式为（  ）</h5><pre><code>A.立即寻址       B.寄存器相对寻址    C.相对基址变址寻址     D.基址变址寻址
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答案：C</span><br><span class="line">在相对基址变址寻址中通常把BX和BP看作是基址寄存器，把Si和Di看作为变址寄存器。它是把一个基址寄存器BX或BP的内容，加上变址寄存器Si或Di的内容，再加上指令中给定的8位或16位位移量，并以一个段寄存器作为地址基准，作为操作数的地址。</span><br></pre></td></tr></table></figure>
+<h5 id="4．设在数据段中有如下数据说明：BUFFER-DW-10-DUP（？）-则以下指令中，经汇编后的指令相当于-MOV-AX，20-的是（-）。"><a href="#4．设在数据段中有如下数据说明：BUFFER-DW-10-DUP（？）-则以下指令中，经汇编后的指令相当于-MOV-AX，20-的是（-）。" class="headerlink" title="4．设在数据段中有如下数据说明：BUFFER  DW  10 DUP（？） 则以下指令中，经汇编后的指令相当于 MOV  AX，20 的是（    ）。"></a>4．设在数据段中有如下数据说明：BUFFER  DW  10 DUP（？） 则以下指令中，经汇编后的指令相当于 MOV  AX，20 的是（    ）。</h5><pre><code>A．MOV  AX，TYPE  BUFFER     B．MOV  AX，LENGTH  BUFFER 
+C．MOV  AX，SIZE   BUFFER    D．MOV  AX，OFFSET  BUFFER 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">size 指令</span><br><span class="line">答案选 C</span><br></pre></td></tr></table></figure>
+<h5 id="5．以下指令中常用于对操作数的特定位置-1-的指令是（-）。"><a href="#5．以下指令中常用于对操作数的特定位置-1-的指令是（-）。" class="headerlink" title="5．以下指令中常用于对操作数的特定位置 1 的指令是（    ）。"></a>5．以下指令中常用于对操作数的特定位置 1 的指令是（    ）。</h5><pre><code>A．AND     B．OR     C．NOT      D．XOR
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AND 0</span><br><span class="line">OR  1</span><br><span class="line">答案选 B</span><br></pre></td></tr></table></figure>
+<h5 id="6．在串操作指令前使用重复前缀指令-REPE，终止串的重复操作条件是（-）。"><a href="#6．在串操作指令前使用重复前缀指令-REPE，终止串的重复操作条件是（-）。" class="headerlink" title="6．在串操作指令前使用重复前缀指令 REPE，终止串的重复操作条件是（  ）。"></a>6．在串操作指令前使用重复前缀指令 REPE，终止串的重复操作条件是（  ）。</h5><pre><code>A．CX＝0 且 ZF＝0    B．CX＝0 且 ZF＝1 C．CX＝0 或 ZF＝0   D．CX＝0 或 ZF＝1 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REPE(repeat equal) 通过检测b标志位ZF是否为0来判断两个字符是否相等</span><br><span class="line">当ZF为1则两个字符相等则比较下一个字符直到CX = 0 或 ZF = 0 停止循环</span><br></pre></td></tr></table></figure>
+<h5 id="7．完成将累加器-AL-清零，并使进位标志-CF-清零，以下不能完成该功能的指令是（-）。"><a href="#7．完成将累加器-AL-清零，并使进位标志-CF-清零，以下不能完成该功能的指令是（-）。" class="headerlink" title="7．完成将累加器 AL 清零，并使进位标志 CF 清零，以下不能完成该功能的指令是（    ）。"></a>7．完成将累加器 AL 清零，并使进位标志 CF 清零，以下不能完成该功能的指令是（    ）。</h5><pre><code>A．MOV AL,00H    B．AND AL,00H     C．XOR AL,AL   D．SUB AL,AL
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV 不影响标志位</span><br></pre></td></tr></table></figure>
+<h5 id="8．设数据段中已有：-DA1-DB-12H-34H-DA2-DW-56H-78H-下面有语法错误的语句是（-）。"><a href="#8．设数据段中已有：-DA1-DB-12H-34H-DA2-DW-56H-78H-下面有语法错误的语句是（-）。" class="headerlink" title="8．设数据段中已有： DA1   DB   12H,34H DA2   DW   56H,78H 下面有语法错误的语句是（   ）。"></a>8．设数据段中已有： DA1   DB   12H,34H DA2   DW   56H,78H 下面有语法错误的语句是（   ）。</h5><pre><code>A．ADR1  DW  DA1               B．MOV   DA1＋1，AX C．MOV  BYTE PTR  DA2＋1，AL    D．MOV  WORD PTR  DA1＋1，AX 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答案为B</span><br><span class="line">mov word ptr DA1 + 1, AX</span><br></pre></td></tr></table></figure>
+<h5 id="9．测试-BL-寄存器内容是否与数据-4FH-相等，若相等则转-NEXT-处执行，可实现的方法是-（-）。"><a href="#9．测试-BL-寄存器内容是否与数据-4FH-相等，若相等则转-NEXT-处执行，可实现的方法是-（-）。" class="headerlink" title="9．测试 BL 寄存器内容是否与数据 4FH 相等，若相等则转 NEXT 处执行，可实现的方法是 （  ）。"></a>9．测试 BL 寄存器内容是否与数据 4FH 相等，若相等则转 NEXT 处执行，可实现的方法是 （  ）。</h5><pre><code>A．TEST BL，4FH     B．XOR BL，4FH JZ  NEXT JZ  NEXT  C．AND BL，4FH    D．OR BL，4FH JZ    NEXT Z NEXT 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答案为：B</span><br></pre></td></tr></table></figure>
+<h5 id="10．设（AX）-6000H，将-AX-中的内容看作是带符号数，以下指令能实现将（AX）乘以-2-的是（-）。"><a href="#10．设（AX）-6000H，将-AX-中的内容看作是带符号数，以下指令能实现将（AX）乘以-2-的是（-）。" class="headerlink" title="10．设（AX）=6000H，将 AX 中的内容看作是带符号数，以下指令能实现将（AX）乘以 2 的是（    ）。"></a>10．设（AX）=6000H，将 AX 中的内容看作是带符号数，以下指令能实现将（AX）乘以 2 的是（    ）。</h5><pre><code>A．SAR  AX，1    B．SAL  AX，1     C．DIV  2     D．IDIV   2 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">左乘右除</span><br><span class="line">答案为 B</span><br></pre></td></tr></table></figure>
+<h3 id="二、-填空题（每空-2-分，共-20-分）"><a href="#二、-填空题（每空-2-分，共-20-分）" class="headerlink" title="二、 填空题（每空 2 分，共 20 分）"></a>二、 填空题（每空 2 分，共 20 分）</h3><h5 id="1．已知存储器单元-12000H-06H-21000H-0AH-段寄存器-DS-1000H-SS-2000H-寄-存器-BX-0B00H-BP-0C00H-SI-1500H-DI-0400H-AX-0。-执行指令-MOV-AL-BX-SI-之后，-AL-；接着执行指令-ADD-AL-BP-DI-之后，-AL-。"><a href="#1．已知存储器单元-12000H-06H-21000H-0AH-段寄存器-DS-1000H-SS-2000H-寄-存器-BX-0B00H-BP-0C00H-SI-1500H-DI-0400H-AX-0。-执行指令-MOV-AL-BX-SI-之后，-AL-；接着执行指令-ADD-AL-BP-DI-之后，-AL-。" class="headerlink" title="1．已知存储器单元(12000H)=06H,(21000H)=0AH.段寄存器(DS)=1000H, (SS)=2000H.寄 存器  (BX)=0B00H, (BP)=0C00H, (SI)=1500H, (DI)=0400H, (AX)=0。 执行指令  MOV  AL,  [BX+SI]之后，(AL)=_；接着执行指令  ADD  AL,  [BP+DI]之后，(AL)=___。"></a>1．已知存储器单元(12000H)=06H,(21000H)=0AH.段寄存器(DS)=1000H, (SS)=2000H.寄 存器  (BX)=0B00H, (BP)=0C00H, (SI)=1500H, (DI)=0400H, (AX)=0。 执行指令  MOV  AL,  [BX+SI]之后，(AL)=<strong><strong>_</strong></strong>；接着执行指令  ADD  AL,  [BP+DI]之后，(AL)=<strong>___</strong>。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(bx + si) + DS = 12000</span><br><span class="line">(BP + DI) + SS = 21000</span><br><span class="line">BP 是 基址指针 ss为段基地址</span><br><span class="line">(AL) = 06H</span><br><span class="line">(AL) = 10H</span><br></pre></td></tr></table></figure>
+<h5 id="2．在存储器的实模式下，每段的最大寻址空间是-，此时逻辑地址由-和段内偏移两部分组成，逻辑地址转换为物理地址的计算公式为-。"><a href="#2．在存储器的实模式下，每段的最大寻址空间是-，此时逻辑地址由-和段内偏移两部分组成，逻辑地址转换为物理地址的计算公式为-。" class="headerlink" title="2．在存储器的实模式下，每段的最大寻址空间是___，此时逻辑地址由 _和段内偏移两部分组成，逻辑地址转换为物理地址的计算公式为 _。"></a>2．在存储器的实模式下，每段的最大寻址空间是<strong><strong><strong>___</strong></strong></strong>，此时逻辑地址由 <strong><strong><strong><strong>_</strong></strong></strong></strong>和段内偏移两部分组成，逻辑地址转换为物理地址的计算公式为 <strong><strong><strong><strong><strong><strong>_</strong></strong></strong></strong></strong></strong>。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1MB 段地址 段地址 * 16 + 偏移地址</span><br></pre></td></tr></table></figure>
+<h5 id="3．计算机指令由-和操作数两部分组成，其中前者用于指示计算机所要执行的操-作。-4．下列-ASCII-串（包括空格符）依次存储在起始地址为-CSTRING-的字节单元中：-CSTRING-DB-‘BASED-ADDRESSING’-请分别按要求写出相应的指令。（每空填一条指令）-（1-）将字符串中的第-2-个字符传送到-DL-中。-（2-）将字符串中的第-4、5-个字符合起来传送到-DX-寄存器。"><a href="#3．计算机指令由-和操作数两部分组成，其中前者用于指示计算机所要执行的操-作。-4．下列-ASCII-串（包括空格符）依次存储在起始地址为-CSTRING-的字节单元中：-CSTRING-DB-‘BASED-ADDRESSING’-请分别按要求写出相应的指令。（每空填一条指令）-（1-）将字符串中的第-2-个字符传送到-DL-中。-（2-）将字符串中的第-4、5-个字符合起来传送到-DX-寄存器。" class="headerlink" title="3．计算机指令由___和操作数两部分组成，其中前者用于指示计算机所要执行的操 作。 4．下列 ASCII 串（包括空格符）依次存储在起始地址为 CSTRING 的字节单元中： CSTRING   DB    ‘BASED ADDRESSING’ 请分别按要求写出相应的指令。（每空填一条指令） （1 ）将字符串中的第 2 个字符传送到 DL 中。___ （2 ）将字符串中的第 4、5 个字符合起来传送到 DX 寄存器。___"></a>3．计算机指令由<strong>___</strong>和操作数两部分组成，其中前者用于指示计算机所要执行的操 作。 4．下列 ASCII 串（包括空格符）依次存储在起始地址为 CSTRING 的字节单元中： CSTRING   DB    ‘BASED ADDRESSING’ 请分别按要求写出相应的指令。（每空填一条指令） （1 ）将字符串中的第 2 个字符传送到 DL 中。<strong><strong><strong><strong>___</strong></strong></strong></strong> （2 ）将字符串中的第 4、5 个字符合起来传送到 DX 寄存器。<strong><strong><strong><strong>___</strong></strong></strong></strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov dl, CSTRING[1]</span><br><span class="line">mov dx, word ptr CSTRING + 3</span><br></pre></td></tr></table></figure>
+<h5 id="5-．-CPU-与-外-设-之-间-的-数-据-传-送-主-要-有-、-中-断-控-制-方-式-和-。"><a href="#5-．-CPU-与-外-设-之-间-的-数-据-传-送-主-要-有-、-中-断-控-制-方-式-和-。" class="headerlink" title="5 ． CPU 与 外 设 之 间 的 数 据 传 送 主 要 有 ___ 、 中 断 控 制 方 式 和 ___。"></a>5 ． CPU 与 外 设 之 间 的 数 据 传 送 主 要 有 <strong><strong><strong>___</strong></strong></strong> 、 中 断 控 制 方 式 和 <strong><strong><strong>___</strong></strong></strong>。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DMA </span><br><span class="line">程序直接控制I/O方式</span><br></pre></td></tr></table></figure>
+<h3 id="三、-简答题（每小题-10-分，共-30-分）"><a href="#三、-简答题（每小题-10-分，共-30-分）" class="headerlink" title="三、 简答题（每小题 10 分，共 30 分）"></a>三、 简答题（每小题 10 分，共 30 分）</h3><h5 id="1．80x86微机的存储器中存放信息如下图，试读出-30022H-和-30024H-字节单元的内容，-以及-30022H-和-30023H-字单元的内容，并指出每次读取内容需要访问内存的次数。"><a href="#1．80x86微机的存储器中存放信息如下图，试读出-30022H-和-30024H-字节单元的内容，-以及-30022H-和-30023H-字单元的内容，并指出每次读取内容需要访问内存的次数。" class="headerlink" title="1．80x86微机的存储器中存放信息如下图，试读出 30022H 和 30024H 字节单元的内容， 以及 30022H 和 30023H 字单元的内容，并指出每次读取内容需要访问内存的次数。"></a>1．80x86微机的存储器中存放信息如下图，试读出 30022H 和 30024H 字节单元的内容， 以及 30022H 和 30023H 字单元的内容，并指出每次读取内容需要访问内存的次数。</h5><pre><code>（注： 格式为：字节：（300XX）=XX，字（300XX）=XXXX。） 30020 12H 30021 34H
+30022 ABH 30023 CDH 30024 EFH  
+</code></pre><p>解答：<br>地址 | 数值<br>—|—<br>30020H | 12H<br>30021H | 34H<br>30022H | ABH<br>30023H | CDH<br>30024  | EFH</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(30022H) = ABH</span><br><span class="line">(30024H) = EFH</span><br><span class="line">(30022H) = CDABH</span><br><span class="line">(30023H) = EFCDH</span><br></pre></td></tr></table></figure>
+<h5 id="2．假设-VAR1和VAR2为字节变量，试指出下列指令哪些是非法的，并说明原因。"><a href="#2．假设-VAR1和VAR2为字节变量，试指出下列指令哪些是非法的，并说明原因。" class="headerlink" title="2．假设 VAR1和VAR2为字节变量，试指出下列指令哪些是非法的，并说明原因。"></a>2．假设 VAR1和VAR2为字节变量，试指出下列指令哪些是非法的，并说明原因。</h5><pre><code>（1） ADD  VAR1，VAR2 （2） CMP  VAR1，24 （3） MOV   AX,VAR2 （4） JNZ   VAR2 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(1)  不能都为立即数</span><br><span class="line">(3)  类型错误</span><br><span class="line">(4)  是字节变量不是符号地址</span><br></pre></td></tr></table></figure>
+<h5 id="3．阅读以下程序：-MOV-BL，64H-MOV-CL，03H-XOR-AX，AX-AGAIN：ADD-AL，BL-ADC-AH，0-DEC-CL-JNZ-AGAIN-问："><a href="#3．阅读以下程序：-MOV-BL，64H-MOV-CL，03H-XOR-AX，AX-AGAIN：ADD-AL，BL-ADC-AH，0-DEC-CL-JNZ-AGAIN-问：" class="headerlink" title="3．阅读以下程序：  MOV BL，64H  MOV CL，03H  XOR AX，AX  AGAIN：ADD AL，BL  ADC AH，0  DEC CL  JNZ AGAIN  问："></a>3．阅读以下程序：  MOV BL，64H  MOV CL，03H  XOR AX，AX  AGAIN：ADD AL，BL  ADC AH，0  DEC CL  JNZ AGAIN  问：</h5><pre><code>（1）该程序段完成的功能是：                       （2）AX=   
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3个64H相加</span><br><span class="line">AX = 012H</span><br></pre></td></tr></table></figure>
+<h3 id="四、程序设计题（每小题-15-分，共-30-分）"><a href="#四、程序设计题（每小题-15-分，共-30-分）" class="headerlink" title="四、程序设计题（每小题 15 分，共 30 分）"></a>四、程序设计题（每小题 15 分，共 30 分）</h3><h5 id="①．试编写小程序：对键盘输入的小写字母用大写字母显示出来。"><a href="#①．试编写小程序：对键盘输入的小写字母用大写字母显示出来。" class="headerlink" title="①．试编写小程序：对键盘输入的小写字母用大写字母显示出来。"></a>①．试编写小程序：对键盘输入的小写字母用大写字母显示出来。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BEGIN：MOV AH，1     </span><br><span class="line">INT 21H  </span><br><span class="line">               CMP AL，‟a‟     </span><br><span class="line"> JB STOP     </span><br><span class="line"> CMP AL，‟z‟      </span><br><span class="line">JA STOP  </span><br><span class="line">              SUB AL，20H      </span><br><span class="line">MOV DL，AL     </span><br><span class="line"> MOV AH，2     </span><br><span class="line"> INT 21H      </span><br><span class="line">JMP BEGIN  </span><br><span class="line">    STOP：RET</span><br></pre></td></tr></table></figure>
+<h5 id="②．-（1）使用-IF-条件伪操作定义宏-RESULT：比较两个数-X-和-Y（X、Y-为数，不是地址），-若-X-gt-Y，则执行-X-2Y→RESULT；否则执行-Y-2X→RESULT。-（2）宏调用指令为：RESULT-1-2-SUM，写出宏展开指令。"><a href="#②．-（1）使用-IF-条件伪操作定义宏-RESULT：比较两个数-X-和-Y（X、Y-为数，不是地址），-若-X-gt-Y，则执行-X-2Y→RESULT；否则执行-Y-2X→RESULT。-（2）宏调用指令为：RESULT-1-2-SUM，写出宏展开指令。" class="headerlink" title="②． （1）使用 IF 条件伪操作定义宏 RESULT：比较两个数 X 和 Y（X、Y 为数，不是地址）， 若 X&gt;Y，则执行 X+2Y→RESULT；否则执行 Y +2X→RESULT。 （2）宏调用指令为：RESULT 1,2,SUM，写出宏展开指令。"></a>②． （1）使用 IF 条件伪操作定义宏 RESULT：比较两个数 X 和 Y（X、Y 为数，不是地址）， 若 X&gt;Y，则执行 X+2<em>Y→RESULT；否则执行 Y +2</em>X→RESULT。 （2）宏调用指令为：RESULT 1,2,SUM，写出宏展开指令。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">2、DATAS SEGMENT</span><br><span class="line">SUM DW ?  ;此处输入数据段代码 </span><br><span class="line">DATAS ENDS</span><br><span class="line"></span><br><span class="line">CODES SEGMENT</span><br><span class="line">ASSUME CS:CODES,DS:DATAS ;,SS:STACKS</span><br><span class="line">START:</span><br><span class="line">CALCULATE MACRO A,B,RESULT</span><br><span class="line">MOV   AX,A</span><br><span class="line">SHL   AX,1</span><br><span class="line">ADD   AX,B</span><br><span class="line">MOV   RESULT,AX</span><br><span class="line">ENDM</span><br><span class="line">FINSUM    MACRO X,Y,SUM</span><br><span class="line">IF    X GT Y</span><br><span class="line">CALCULATE Y,X,SUM</span><br><span class="line">ELSE</span><br><span class="line">  CALCULATE X,Y,SUM</span><br><span class="line">ENDIF</span><br><span class="line">    ENDM  </span><br><span class="line"></span><br><span class="line">    FINSUM 1,2,SUM</span><br><span class="line"></span><br><span class="line">    MOV AH,4CH</span><br><span class="line">    INT 21H</span><br><span class="line">CODES ENDS</span><br><span class="line">    END START</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/12/23/《汇编语言程序设计》阶段测试A卷/">《汇编语言程序设计》阶段测试A卷</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 涵小书 的个人博客">涵小书</a></p>
+        <p><span>发布时间:</span>2018年12月23日 - 17时48分</p>
+        <p><span>最后更新:</span>2018年12月23日 - 17时49分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/23/《汇编语言程序设计》阶段测试A卷/" title="《汇编语言程序设计》阶段测试A卷">http://yoursite.com/2018/12/23/《汇编语言程序设计》阶段测试A卷/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/12/23/《汇编语言程序设计》阶段测试A卷/　　作者: 涵小书" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/22/汇编期末A卷详解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">汇编期末A卷详解</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、-单选题（每小题-2-分，共-20-分）"><span class="toc-number">1.</span> <span class="toc-text">一、 单选题（每小题 2 分，共 20 分）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1．已知-X-78-Y-83-则-X-Y-补-（-）"><span class="toc-number">1.0.1.</span> <span class="toc-text">1．已知 X=78,Y=-83 则[X+Y]补=（    ）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2．8086-8088的存储器组织是将存储器划分为段，可作为段的起始地址的是（-）。"><span class="toc-number">1.0.2.</span> <span class="toc-text">2．8086/8088的存储器组织是将存储器划分为段，可作为段的起始地址的是（    ）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3．MOV-AX-COUNT-BX-SI-，则源操作数的寻址方式为（-）"><span class="toc-number">1.0.3.</span> <span class="toc-text">3．MOV AX,COUNT[BX][SI]，则源操作数的寻址方式为（  ）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4．设在数据段中有如下数据说明：BUFFER-DW-10-DUP（？）-则以下指令中，经汇编后的指令相当于-MOV-AX，20-的是（-）。"><span class="toc-number">1.0.4.</span> <span class="toc-text">4．设在数据段中有如下数据说明：BUFFER  DW  10 DUP（？） 则以下指令中，经汇编后的指令相当于 MOV  AX，20 的是（    ）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5．以下指令中常用于对操作数的特定位置-1-的指令是（-）。"><span class="toc-number">1.0.5.</span> <span class="toc-text">5．以下指令中常用于对操作数的特定位置 1 的指令是（    ）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6．在串操作指令前使用重复前缀指令-REPE，终止串的重复操作条件是（-）。"><span class="toc-number">1.0.6.</span> <span class="toc-text">6．在串操作指令前使用重复前缀指令 REPE，终止串的重复操作条件是（  ）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7．完成将累加器-AL-清零，并使进位标志-CF-清零，以下不能完成该功能的指令是（-）。"><span class="toc-number">1.0.7.</span> <span class="toc-text">7．完成将累加器 AL 清零，并使进位标志 CF 清零，以下不能完成该功能的指令是（    ）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8．设数据段中已有：-DA1-DB-12H-34H-DA2-DW-56H-78H-下面有语法错误的语句是（-）。"><span class="toc-number">1.0.8.</span> <span class="toc-text">8．设数据段中已有： DA1   DB   12H,34H DA2   DW   56H,78H 下面有语法错误的语句是（   ）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9．测试-BL-寄存器内容是否与数据-4FH-相等，若相等则转-NEXT-处执行，可实现的方法是-（-）。"><span class="toc-number">1.0.9.</span> <span class="toc-text">9．测试 BL 寄存器内容是否与数据 4FH 相等，若相等则转 NEXT 处执行，可实现的方法是 （  ）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10．设（AX）-6000H，将-AX-中的内容看作是带符号数，以下指令能实现将（AX）乘以-2-的是（-）。"><span class="toc-number">1.0.10.</span> <span class="toc-text">10．设（AX）=6000H，将 AX 中的内容看作是带符号数，以下指令能实现将（AX）乘以 2 的是（    ）。</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#二、-填空题（每空-2-分，共-20-分）"><span class="toc-number">2.</span> <span class="toc-text">二、 填空题（每空 2 分，共 20 分）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1．已知存储器单元-12000H-06H-21000H-0AH-段寄存器-DS-1000H-SS-2000H-寄-存器-BX-0B00H-BP-0C00H-SI-1500H-DI-0400H-AX-0。-执行指令-MOV-AL-BX-SI-之后，-AL-；接着执行指令-ADD-AL-BP-DI-之后，-AL-。"><span class="toc-number">2.0.1.</span> <span class="toc-text">1．已知存储器单元(12000H)=06H,(21000H)=0AH.段寄存器(DS)=1000H, (SS)=2000H.寄 存器  (BX)=0B00H, (BP)=0C00H, (SI)=1500H, (DI)=0400H, (AX)=0。 执行指令  MOV  AL,  [BX+SI]之后，(AL)=_；接着执行指令  ADD  AL,  [BP+DI]之后，(AL)=___。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2．在存储器的实模式下，每段的最大寻址空间是-，此时逻辑地址由-和段内偏移两部分组成，逻辑地址转换为物理地址的计算公式为-。"><span class="toc-number">2.0.2.</span> <span class="toc-text">2．在存储器的实模式下，每段的最大寻址空间是___，此时逻辑地址由 _和段内偏移两部分组成，逻辑地址转换为物理地址的计算公式为 _。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3．计算机指令由-和操作数两部分组成，其中前者用于指示计算机所要执行的操-作。-4．下列-ASCII-串（包括空格符）依次存储在起始地址为-CSTRING-的字节单元中：-CSTRING-DB-‘BASED-ADDRESSING’-请分别按要求写出相应的指令。（每空填一条指令）-（1-）将字符串中的第-2-个字符传送到-DL-中。-（2-）将字符串中的第-4、5-个字符合起来传送到-DX-寄存器。"><span class="toc-number">2.0.3.</span> <span class="toc-text">3．计算机指令由___和操作数两部分组成，其中前者用于指示计算机所要执行的操 作。 4．下列 ASCII 串（包括空格符）依次存储在起始地址为 CSTRING 的字节单元中： CSTRING   DB    ‘BASED ADDRESSING’ 请分别按要求写出相应的指令。（每空填一条指令） （1 ）将字符串中的第 2 个字符传送到 DL 中。___ （2 ）将字符串中的第 4、5 个字符合起来传送到 DX 寄存器。___</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-．-CPU-与-外-设-之-间-的-数-据-传-送-主-要-有-、-中-断-控-制-方-式-和-。"><span class="toc-number">2.0.4.</span> <span class="toc-text">5 ． CPU 与 外 设 之 间 的 数 据 传 送 主 要 有 ___ 、 中 断 控 制 方 式 和 ___。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、-简答题（每小题-10-分，共-30-分）"><span class="toc-number">3.</span> <span class="toc-text">三、 简答题（每小题 10 分，共 30 分）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1．80x86微机的存储器中存放信息如下图，试读出-30022H-和-30024H-字节单元的内容，-以及-30022H-和-30023H-字单元的内容，并指出每次读取内容需要访问内存的次数。"><span class="toc-number">3.0.1.</span> <span class="toc-text">1．80x86微机的存储器中存放信息如下图，试读出 30022H 和 30024H 字节单元的内容， 以及 30022H 和 30023H 字单元的内容，并指出每次读取内容需要访问内存的次数。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2．假设-VAR1和VAR2为字节变量，试指出下列指令哪些是非法的，并说明原因。"><span class="toc-number">3.0.2.</span> <span class="toc-text">2．假设 VAR1和VAR2为字节变量，试指出下列指令哪些是非法的，并说明原因。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3．阅读以下程序：-MOV-BL，64H-MOV-CL，03H-XOR-AX，AX-AGAIN：ADD-AL，BL-ADC-AH，0-DEC-CL-JNZ-AGAIN-问："><span class="toc-number">3.0.3.</span> <span class="toc-text">3．阅读以下程序：  MOV BL，64H  MOV CL，03H  XOR AX，AX  AGAIN：ADD AL，BL  ADC AH，0  DEC CL  JNZ AGAIN  问：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、程序设计题（每小题-15-分，共-30-分）"><span class="toc-number">4.</span> <span class="toc-text">四、程序设计题（每小题 15 分，共 30 分）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①．试编写小程序：对键盘输入的小写字母用大写字母显示出来。"><span class="toc-number">4.0.1.</span> <span class="toc-text">①．试编写小程序：对键盘输入的小写字母用大写字母显示出来。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②．-（1）使用-IF-条件伪操作定义宏-RESULT：比较两个数-X-和-Y（X、Y-为数，不是地址），-若-X-gt-Y，则执行-X-2Y→RESULT；否则执行-Y-2X→RESULT。-（2）宏调用指令为：RESULT-1-2-SUM，写出宏展开指令。"><span class="toc-number">4.0.2.</span> <span class="toc-text">②． （1）使用 IF 条件伪操作定义宏 RESULT：比较两个数 X 和 Y（X、Y 为数，不是地址）， 若 X&gt;Y，则执行 X+2Y→RESULT；否则执行 Y +2X→RESULT。 （2）宏调用指令为：RESULT 1,2,SUM，写出宏展开指令。</span></a></li></ol></li>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/12/22/汇编期末A卷详解/" title="下一篇: 汇编期末A卷详解">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/23/《汇编语言程序设计》阶段测试A卷/">《汇编语言程序设计》阶段测试A卷</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/22/汇编期末A卷详解/">汇编期末A卷详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/21/计算机网络复习大纲-考试版/">计算机网络复习大纲(考试版)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/21/汇编小项目/">汇编小项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/20/汇编语言第四章/">汇编语言第四章</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/20/汇编语言第三章/">汇编语言第三章</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/19/汇编语言第二章/">汇编语言第二章</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/18/汇编语言第一章/">汇编语言第一章</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/17/方法的重载与递归/">方法的重载与递归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/25/位运算/">位运算</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/25/I-love-Algorithm/">I Iove Algorithm</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 涵小书
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
